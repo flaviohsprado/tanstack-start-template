@@ -14,7 +14,15 @@ export const auth = betterAuth({
    emailAndPassword: {
       enabled: true,
    },
-   trustedOrigins: [env.BETTER_AUTH_TRUSTED_ORIGINS],
+   user: {
+      additionalFields: {
+         phone: {
+            type: "string",
+            required: false,
+         },
+      },
+   },
+   trustedOrigins: [env.BETTER_AUTH_TRUSTED_ORIGINS!],
    jwt: {
       enabled: true,
       secret: env.BETTER_AUTH_SECRET,

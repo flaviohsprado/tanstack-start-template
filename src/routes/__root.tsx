@@ -25,7 +25,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
             content: "width=device-width, initial-scale=1",
          },
          {
-            title: "Medsync",
+            title: "Template - TanStack",
          },
       ],
       links: [{ rel: "stylesheet", href: appCss }],

@@ -1,14 +1,18 @@
 import { z } from "zod";
 
 const serverSchema = z.object({
-   DATABASE_URL: z.string().url(),
-   BETTER_AUTH_SECRET: z.string(),
-   BETTER_AUTH_TRUSTED_ORIGINS: z.string(),
+   DATABASE_URL: z.url().optional(),
+   BETTER_AUTH_SECRET: z.string().optional(),
+   BETTER_AUTH_TRUSTED_ORIGINS: z.string().optional(),
+   AWS_ACCESS_KEY_ID: z.string().optional(),
+   AWS_SECRET_ACCESS_KEY: z.string().optional(),
+   AWS_REGION: z.string().optional(),
+   AWS_S3_BUCKET: z.string().optional(),
    DEV: z.boolean().default(false),
+   NEXT_PUBLIC_APP_URL: z.string().optional(),
 });
 
 const clientSchema = z.object({
-   VITE_DATABASE_URL: z.string().url(),
    VITE_DEV: z.boolean().default(false),
 });
 
